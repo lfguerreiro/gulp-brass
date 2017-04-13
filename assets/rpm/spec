@@ -1,12 +1,21 @@
 %define _topdir {{buildDir}}
 %define _base   {{name}}
 
+{{#if defines}}
+{{#each defines}}
+%define {{this}}
+{{/each}}
+{{/if}}
+
 Summary:        {{{summary}}}
 Name:           {{name}}
 Group:          {{group}}
 Version:        {{version}}
 Release:        {{release}}
 License:        {{license}}
+{{#if BuildArch}}
+BuildArch:      {{BuildArch}}
+{{/if}}
 {{#if ur}}
 URL:            {{url}}
 {{/if}}
@@ -46,4 +55,8 @@ fi
 {{/equal}}
 
 %files
+{{#if defaultAttributes}}
+%defattr ({{defaultAttributes}})
+{{/if}}
 {{{specFileList}}}
+
