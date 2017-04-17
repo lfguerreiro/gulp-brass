@@ -20,6 +20,13 @@ BuildArch:      {{BuildArch}}
 URL:            {{url}}
 {{/if}}
 
+{{#if prepScript}}
+%prep
+{{#each prepScript}}
+{{this}}
+{{/each}}
+{{/if}}
+
 AutoReq:        0
 AutoProv:       0
 AutoReqProv:    0
