@@ -3,7 +3,7 @@
 
 {{#if defines}}
 {{#each defines}}
-%define {{this}}
+%define {{{this}}}
 {{/each}}
 {{/if}}
 
